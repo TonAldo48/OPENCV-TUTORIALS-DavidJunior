@@ -12,7 +12,7 @@ cv.createTrackbar('Radius', 'Paint Application', 0,10, nothing)
 ix, iy = -1, -1
 drawing = False
 
-def pointer(event, x, y, flags, params):
+def pointer(event, x, y, flags, param):
     global ix, iy, drawing, color_, thickness_
 
     if event == cv.EVENT_LBUTTONDOWN:
@@ -20,17 +20,18 @@ def pointer(event, x, y, flags, params):
         ix, iy =  x, y
 
     elif event == cv.EVENT_MOUSEMOVE:
-        if drawing == True:
-            cv.circle(img, (x, y), 5, tuple(color_), thickness_)
+        if drawing:
+            cv.circle(img, (x, y), thickness_, tuple(color_), -1)
 
     elif event == cv.EVENT_LBUTTONUP:
-        drawing == False
-        cv.circle(img, (x, y), 5, tuple(color_), thickness_)
+        drawing = False
+        cv.circle(img, (x, y), thickness_, tuple(color_), -1)
 
 img = np.zeros((512,512,3), dtype=np.uint8)
 cv.setMouseCallback('Paint Application', pointer)
 
 while True:
+    
     cv.imshow('Paint Application', img)
 
     r = cv.getTrackbarPos('Red', 'Paint Application')
