@@ -1,0 +1,7 @@
+{
+    "python.testing.pytestArgs": [
+        "CORE OPERATIONS"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
