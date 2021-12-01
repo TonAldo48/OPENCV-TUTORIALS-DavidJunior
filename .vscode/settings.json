@@ -3,5 +3,6 @@
         "CORE OPERATIONS"
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "cmake.configureOnOpen": true
 }
