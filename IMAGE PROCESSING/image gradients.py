@@ -5,9 +5,11 @@ from matplotlib import pyplot as plt
 ## Three types, cv.sobel, cv.scharr, cv.laplacian
 img  = cv.imread(r'images\IMG_6175.jpeg')
 # img1 = cv.cvtColor(img1, cv.COLOR_BGR2GRAY)
+print(type(img))
 
 
 laplacian = cv.Laplacian(img,cv.CV_64F)
+print(type(laplacian))
 sobelx = cv.Sobel(img,cv.CV_64F,1,0,ksize=5)
 sobely = cv.Sobel(img,cv.CV_64F,0,1,ksize=5)
 plt.subplot(2,2,1),plt.imshow(img,cmap = 'gray')
